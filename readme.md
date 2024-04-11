@@ -11,6 +11,8 @@ It's like a space invaders game embellished with web3.
 **PLAY ON A COMPUTER** (not adapted to small devices)  
 Access the game [here](https://dev.invaders.sampleweb3.dev/)  
 
+**Use a Polygon Amoy Tesnet wallet**
+
 - **Production environment:** https://invaders.sampleweb3.dev/  
 - **Dev environment:** https://dev.invaders.sampleweb3.dev/
 
