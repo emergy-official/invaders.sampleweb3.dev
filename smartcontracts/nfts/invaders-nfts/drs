@@ -1,0 +1,10 @@
+{
+  "image": "ipfs://bafybeic62hzvdhirtqqeaokqiztye76xynjnffbgmjxkey3eegfxov6x3e/projectile_3.png",
+  "name": "DRS",
+  "description": "A projectile that can go beyond the stock market",
+  "attributes": [
+    { "trait_type": "Lives", "value": "2" },
+    { "trait_type": "Speed", "value": "4" },
+    { "trait_type": "Projectile", "value": "1" }
+  ]
+}

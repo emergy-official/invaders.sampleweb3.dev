@@ -1,0 +1,10 @@
+{
+  "image": "ipfs://bafybeic62hzvdhirtqqeaokqiztye76xynjnffbgmjxkey3eegfxov6x3e/projectile_2.png",
+  "name": "Laser (X3)",
+  "description": "Launch 3 lasers!",
+  "attributes": [
+    { "trait_type": "Lives", "value": "1" },
+    { "trait_type": "Speed", "value": "1.5" },
+    { "trait_type": "Projectile", "value": "3" }
+  ]
+}

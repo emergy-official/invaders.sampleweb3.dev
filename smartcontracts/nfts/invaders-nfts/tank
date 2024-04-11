@@ -1,0 +1,9 @@
+{
+  "image": "ipfs://bafybeic62hzvdhirtqqeaokqiztye76xynjnffbgmjxkey3eegfxov6x3e/spaceship_3.png",
+  "name": "Tank",
+  "description": "This spaceship can take damage but is slow",
+  "attributes": [
+    { "trait_type": "Lives", "value": "5" },
+    { "trait_type": "Speed", "value": "1.5" }
+  ]
+}

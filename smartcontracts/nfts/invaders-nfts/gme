@@ -1,0 +1,9 @@
+{
+  "image": "ipfs://bafybeic62hzvdhirtqqeaokqiztye76xynjnffbgmjxkey3eegfxov6x3e/spaceship_4.png",
+  "name": "GME",
+  "description": "GME Spaceship from reddit pixel wars",
+  "attributes": [
+    { "trait_type": "Lives", "value": "8" },
+    { "trait_type": "Speed", "value": "4" }
+  ]
+}

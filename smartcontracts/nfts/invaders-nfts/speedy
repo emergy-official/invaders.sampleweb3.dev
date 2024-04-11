@@ -1,0 +1,15 @@
+{
+  "image": "ipfs://bafybeic62hzvdhirtqqeaokqiztye76xynjnffbgmjxkey3eegfxov6x3e/spaceship_2.png",
+  "name": "Speedy",
+  "description": "A fast spaceship!",
+  "attributes": [
+    {
+      "trait_type": "Lives",
+      "value": "3"
+    },
+    {
+      "trait_type": "Speed",
+      "value": "3"
+    }
+  ]
+}

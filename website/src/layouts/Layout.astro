@@ -1,0 +1,219 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={title} />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@imtbl/sdk@0.44.1"></script> -->
+    <script
+      src="https://kit.fontawesome.com/90af9bb89d.js"
+      crossorigin="anonymous"></script>
+    <script src="/scripts/custom-p5.js" is:inline></script>
+    <script src="/scripts/p5.min.js" is:inline></script>
+    <script src="/scripts/p5.dom.min.js" is:inline></script>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <script>
+      window.gameInfo = {
+        // userInfo: {
+        //   email: "john@doe.com"
+        // },
+        config: {
+          lambdaURL:
+            "https://wpobvq45qld4aipksxs6annjtu0anhpr.lambda-url.us-east-1.on.aws/",
+          env: "local",
+          hubClientID: "2Oc8dUOjUvTIqhqApdGk7ofI84dh3etT",
+          creatorAddress: "0x5b5d17B6d2E3063cE8478C19011736654d7d0AcB",
+          collectionContractAddress:
+            "0x8C9b6d99AEe5533C85972F6Cc34F2E6FaEA8cD33",
+          publishableKey: "pk_imapik-test-EOzrOqR_BJDE95Btm@XU",
+        },
+        inventory: {
+          spaceships: [
+            {
+              name: "Starter",
+              image: "/images/spaceship_1.png",
+              gameImage: "/images/spaceship_1.png",
+              speed: 1.5,
+              lives: 3,
+              isNFT: false,
+              selected: true,
+              owned: true,
+            },
+            {
+              name: "Speedy",
+              claimName: "speedy",
+              image: "/images/spaceship_2.png",
+              gameImage: "/images/spaceship_2.png",
+              speed: 3,
+              lives: 3,
+              isNFT: true,
+              owned: false,
+              price: 0.0001,
+              contractFunction: "buySpeedy",
+              tokenURI: "ipfs://QmVmP8fueMWwrK6iWks5usp4MNWrmNwzyvz3aZiqEVLBm4/speedy",
+            },
+            {
+              name: "Tank",
+              claimName: "tank",
+              image: "/images/spaceship_3.png",
+              gameImage: "/images/spaceship_3.png",
+              speed: 1.5,
+              lives: 5,
+              isNFT: true,
+              owned: false,
+              price: 0.00015,
+              tokenURI: "ipfs://QmVmP8fueMWwrK6iWks5usp4MNWrmNwzyvz3aZiqEVLBm4/tank",
+            },
+            {
+              name: "GME",
+              claimName: "gme",
+              image: "/images/spaceship_4.png",
+              gameImage: "/images/spaceship_4.png",
+              speed: 4,
+              lives: 8,
+              isNFT: true,
+              owned: false,
+              price: 0.0002,
+              contractFunction: "buyGME",
+              tokenURI: "ipfs://QmVmP8fueMWwrK6iWks5usp4MNWrmNwzyvz3aZiqEVLBm4/gme",
+            },
+          ],
+          projectiles: [
+            {
+              name: "Laser",
+              claimName: "laser",
+              image: "/images/projectile_1.png",
+              gameImage: "/images/projectile_1.png",
+              speed: 1.5,
+              lives: 1,
+              number: 1,
+              isNFT: false,
+              owned: true,
+              selected: true,
+            },
+            {
+              name: "Laser (x3)",
+              claimName: "laserx3",
+              image: "/images/projectile_2.png",
+              gameImage: "/images/projectile_1.png",
+              speed: 1.5,
+              lives: 1,
+              number: 3,
+              isNFT: true,
+              owned: false,
+              price: 0.0003,
+              contractFunction: "buyLaserThree",
+              tokenURI: "ipfs://QmVmP8fueMWwrK6iWks5usp4MNWrmNwzyvz3aZiqEVLBm4/laserx3",
+            },
+            {
+              name: "DRS",
+              claimName: "drs",
+              image: "/images/projectile_3.png",
+              gameImage: "/images/projectile_3.png",
+              speed: 4,
+              lives: 2,
+              number: 1,
+              isNFT: true,
+              owned: false,
+              price: 0.0004,
+              contractFunction: "buyDRS",
+              tokenURI: "ipfs://QmVmP8fueMWwrK6iWks5usp4MNWrmNwzyvz3aZiqEVLBm4/drs",
+            },
+            {
+              name: "DRS (x5)",
+              claimName: "drsx5",
+              image: "/images/projectile_4.png",
+              gameImage: "/images/projectile_3.png",
+              speed: 4,
+              lives: 2,
+              number: 5,
+              isNFT: true,
+              owned: false,
+              price: 0.0005,
+              contractFunction: "buyDRSFive",
+              tokenURI: "ipfs://QmVmP8fueMWwrK6iWks5usp4MNWrmNwzyvz3aZiqEVLBm4/drsx5",
+            },
+          ],
+        },
+      };
+      window.addEventListener("load", function () {
+        // #IMX_ISSUE Cannot use import right now, had to rely on this.
+        // window.gameInfo.passportInstance =
+        //   new window.immutable.passport.Passport({
+        //     baseConfig: {
+        //       environment: window.immutable.config.Environment.SANDBOX,
+        //     },
+        //     clientId: window.gameInfo.config.hubClientID,
+        //     redirectUri: "http://localhost:4321/",
+        //     logoutRedirectUri: "http://localhost:4321/logout",
+        //     audience: "platform_api",
+        //     scope: "openid offline_access email transact",
+        //   });
+
+        // const client = new window.immutable.blockchainData.BlockchainData({
+        //   baseConfig: {
+        //     environment: "sandbox",
+        //     publishableKey: window.gameInfo.config.publishableKey,
+        //   },
+        // });
+
+        // window.gameInfo.client = client;
+
+        // window.test = async () => {
+        //   const response =
+        //     await window.gameInfo.client.listNFTsByAccountAddress({
+        //       chainName: "imtbl-zkevm-testnet",
+        //       accountAddress: window.gameInfo.userInfo.walletAddress,
+        //       contractAddress:
+        //         window.gameInfo.config.collectionContractAddress,
+        //     });
+        // };
+        // window.gameInfo.passportInstance.loginCallback();
+        // window.gameInfo.passportProvider =
+        //   window.gameInfo.passportInstance.connectEvm();
+      });
+    </script>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background: #13151a;
+    background-size: 224px;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+</style>

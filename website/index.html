@@ -1,0 +1,79 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>Local Video Player</title>  
+</head>  
+<body>  
+    <div>  
+        <input type="file" id="videoFile" accept="video/*">  
+    </div>  
+  
+    <div>  
+        <video id="video" controls>  
+            Your browser does not support the video tag.  
+        </video>  
+    </div>  
+  
+    <div>  
+        <h3>Subtitles</h3>  
+        <select id="subtitlesSelect"></select>  
+    </div>  
+  
+    <div>  
+        <h3>Audio</h3>  
+        <select id="audioSelect"></select>  
+    </div>  
+  
+    <script>  
+        // Get the video element  
+        const videoElement = document.getElementById("video");  
+  
+        // Get the input element for video file  
+        const videoFileInput = document.getElementById("videoFile");  
+  
+        // Get the select element for subtitles  
+        const subtitlesSelect = document.getElementById("subtitlesSelect");  
+  
+        // Get the select element for audio  
+        const audioSelect = document.getElementById("audioSelect");  
+  
+        // Load the selected video file into the video element  
+        videoFileInput.addEventListener("change", function() {  
+            const file = videoFileInput.files[0];  
+            const url = URL.createObjectURL(file);  
+            videoElement.src = url;  
+        });  
+  
+        // Wait for the video metadata to load  
+        videoElement.addEventListener("loadedmetadata", function() {  
+            // Loop through available subtitles  
+            for (let i = 0; i < videoElement.textTracks.length; i++) {  
+                let option = document.createElement("option");  
+                option.text = videoElement.textTracks[i].label;  
+                option.value = i;  
+                subtitlesSelect.add(option);  
+            }  
+            
+            // Loop through available audio tracks  
+            for (let i = 0; i < videoElement.audioTracks.length; i++) {  
+                let option = document.createElement("option");  
+                option.text = videoElement.audioTracks[i].label;  
+                option.value = i;  
+                audioSelect.add(option);  
+            }  
+        });  
+  
+        // Change the subtitle track when select option changes  
+        subtitlesSelect.addEventListener("change", function() {  
+            const selectedIndex = subtitlesSelect.selectedIndex;  
+            videoElement.textTracks[selectedIndex].mode = "showing";  
+        });  
+  
+        // Change the audio track when select option changes  
+        audioSelect.addEventListener("change", function() {  
+            const selectedIndex = audioSelect.selectedIndex;  
+            videoElement.audioTracks[selectedIndex].enabled = true;  
+        });  
+    </script>  
+</body>  
+</html>  

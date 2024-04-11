@@ -1,0 +1,16 @@
+---
+import "./../assets/scss/style.scss";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Web3 Invaders" />
+<script>
+  for (let key in localStorage) {
+    if (key.startsWith("inventory-")) {
+      localStorage.removeItem(key);
+    }
+  }
+  setTimeout(() => {
+    window.location.href ="/"
+  }, 100)
+</script>

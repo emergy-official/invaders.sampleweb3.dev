@@ -1,0 +1,29 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@imtbl/contracts": "^2.1.1",
+    "@imtbl/sdk": "^0.39.0",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.2",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@openzeppelin/contracts": "4.9.3",
+    "ethers": "^6.9.1",
+    "hardhat": "^2.19.3",
+    "hardhat-deploy": "^0.11.45",
+    "solidity-bits": "^0.4.0",
+    "solidity-bytes-utils": "^0.8.1"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "chai": "^4.3.10",
+    "ts-node": "^10.9.2"
+  }
+}
