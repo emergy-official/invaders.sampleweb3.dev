@@ -44,8 +44,8 @@ Launch your game
 
 This project is created for fun and need security improvements before using it for a real projects:
 - Anyone can play with a smart contract function
-  -  You can fake the leaderboard score
   -  You can fake leveling up
+  -  You can fake having in-game items
 
 - The code readability, typescript and unit tests should be improved in the future.
 
