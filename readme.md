@@ -55,8 +55,8 @@ This project is created for fun and need security improvements before using it f
 
 - [FreeCodeCamp Youtube video](https://www.youtube.com/watch?v=gyMwXuJrbJQ) - Full Stack web3 development, best way to start a web3 journey
   
-- [MidJourney](https://www.midjourney.com/) - All assets are generated from midjourney (they are then reworked on GIMP, find the gimp files in the [raw folder](./raw/))
+- [MidJourney](https://www.midjourney.com/) - All assets are generated from midjourney (they are then reworked on GIMP, find the gimp files in the [raw folder](./website/raw/))
 
 - [ChatGPT](https://openai.com/) - Useful on specific use cases
 
-- [AWS](https://aws.amazon.com/) - Hosting (S3 & Cloudfront - automated with terraform and scripts through AWS Organization). Github workflows & project are stored on a private repository. This act as a public interface.
+- [AWS](https://aws.amazon.com/) - Hosting (S3 & Cloudfront - automated with terraform and scripts through AWS Organization).
